@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void getArray(int* massive, int size){
+    srand(time(NULL));
+    for (int i = 0; i < size; i++){
+        massive[i] = 1 + rand() % 1000;
+        printf("%d ", massive[i]);
+    }
+    printf("\n");
+}
+
+
+void sort(int* arr, int e){
+    printf("Sorted array:\n");
+    for (int j=0; j < e; j++){
+        for (int k = 0; k<e-1; k++){
+            int ankor;
+            if (arr[k] > arr[1+k]){
+                ankor = arr[k];
+                arr[k] = arr [k+1];
+                arr[k+1] = ankor;
+            }
+        }
+    }
+    for (int m=0; m < e; m++){
+        printf("%d ", arr[m]);
+    }
+    printf("\n");
+}
+
+
+
+int main(void){
+    int N;
+    printf ("Add matrix size!\n");
+    srand(time(NULL));
+        N = 1 + rand() % 1000;
+        printf("%d \n" , N);
+    int array[N];
+    getArray(array, N);
+    sort(array,N);
+    return 0;
+}
