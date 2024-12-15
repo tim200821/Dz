@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void){
+    printf ("Enter number: ");
+    int i;
+    scanf("%d", &i);
+    (i >= 0) ? printf ("pasitive") : printf ("negative");
+    return 0;
+}
